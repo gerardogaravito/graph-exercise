@@ -1,0 +1,13 @@
+$primary-color: #004ec9;
+$dark-color: #183b56;
+$success-color: #38b000;
+$error-color: #c9184a;
+$white-color: #fff;
+$gray-color: #9e9e9e;
+$black-color: #000;
+
+:export {
+  colors: {
+    primarycolor: $primary-color;
+  }
+}
