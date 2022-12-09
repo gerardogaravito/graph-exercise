@@ -1,0 +1,14 @@
+@import 'styles/variables.module.scss';
+
+.navigate {
+  margin: 36px 0px;
+  padding: 24px 48px;
+  background-color: $primary-color;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  border-radius: 3px;
+  color: $white-color;
+
+  &:hover {
+    background-color: $success-color;
+  }
+}

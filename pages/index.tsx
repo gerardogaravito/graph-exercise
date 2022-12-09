@@ -1,9 +1,11 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
+import styles from 'styles/Home.module.scss';
+import { useStore } from 'store';
 
-import { Footer } from '../components';
+import { Footer, Header, NodesInput, NavigateButton } from 'components';
 
 export default function Home() {
+  const { nodes } = useStore();
   return (
     <div className={styles.container}>
       <Head>
@@ -12,22 +14,13 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Graph Exercise</h1>
+      <Header />
 
-        <h2 className={styles.subtitle}>
-          Developed by{' '}
-          <a
-            href='https://gerardogaravito.vercel.app/'
-            target={'_blank'}
-            rel='noreferrer'
-          >
-            Gerardo Garavito
-          </a>
-        </h2>
-      </main>
+      <NodesInput />
 
-      <Footer />
+      {nodes.length > 0 && <NavigateButton to='/relations' text='siguiente' />}
+
+      {/* <Footer /> */}
     </div>
   );
 }
