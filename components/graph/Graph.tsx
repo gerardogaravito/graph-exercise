@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import dynamic from 'next/dynamic';
-import styles from './graph.module.scss';
 import { relationType } from 'types/nodes.types';
 import { useCreateDot } from 'hooks';
 
@@ -8,18 +7,13 @@ const Graphviz = dynamic(() => import('graphviz-react'), { ssr: false });
 
 interface IGraph {
   relations: relationType[];
+  pathOrder?: string[];
 }
 
-const Graph: FC<IGraph> = ({ relations }) => {
-  const { dot } = useCreateDot(relations);
+const Graph: FC<IGraph> = ({ relations, pathOrder }) => {
+  const { dot } = useCreateDot(relations, pathOrder);
 
-  return (
-    <Graphviz
-      options={{ height: 450 }}
-      dot={dot}
-      className={styles.graph_container}
-    />
-  );
+  return <Graphviz options={{ height: 450 }} dot={dot} />;
 };
 
 export default Graph;

@@ -42,15 +42,12 @@ const RelationsGenerator: FC<IRelationsGenerator> = ({
           weight,
         },
       });
-
-      setFirstNode('');
-      setSecondNode('');
       setWeight(1);
     }
   };
 
   return (
-    <React.Fragment>
+    <>
       <Select
         className={styles.nodeSelector}
         options={options}
@@ -78,7 +75,7 @@ const RelationsGenerator: FC<IRelationsGenerator> = ({
       <button className={styles.generateButton} onClick={handleAddRelation}>
         Generate relation
       </button>
-    </React.Fragment>
+    </>
   );
 };
 

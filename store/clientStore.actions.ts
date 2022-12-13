@@ -6,14 +6,9 @@ type RelationsActions = {
   type: 'ADD_RELATION';
   payload: { relation: string; weight: number };
 };
-// | {
-//     type: 'LOGIN';
-//     payload: {
-//       email: string;
-//       accessToken: string;
-//       refreshToken: string;
-//       accessTokenExpiration?: string;
-//     };
-//   }
 
-export type Actions = NodesActions | RelationsActions;
+type PathOrderActions =
+  | { type: 'ADD_STEP'; payload: { newStep: string } }
+  | { type: 'DELETE_STEP' };
+
+export type Actions = NodesActions | RelationsActions | PathOrderActions;
