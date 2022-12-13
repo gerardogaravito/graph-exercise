@@ -19,6 +19,15 @@ const reducer = (draft: Clientdraft, action: Actions) => {
       draft.relations = [...draft.relations, { relation, weight }];
       break;
 
+    case 'ADD_STEP':
+      const { newStep } = action.payload;
+      draft.pathOrder = [...draft.pathOrder, newStep];
+      break;
+
+    case 'DELETE_STEP':
+      draft.pathOrder.pop();
+      break;
+
     default:
       throw new Error('Invalid action type');
   }

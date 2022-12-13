@@ -5,7 +5,7 @@ import styles from './nodesinput.module.scss';
 import { Node } from 'components';
 
 const NodesInput: FC = () => {
-  const { nodes, dispatch } = useStore();
+  const { nodes, dispatch, pathOrder } = useStore();
 
   const [newNode, setNewNode] = useState<string>('');
   const [showError, setShowError] = useState<boolean>(false);
@@ -47,7 +47,12 @@ const NodesInput: FC = () => {
 
       <div className={styles.nodesContainer}>
         {nodes.map((node) => (
-          <Node key={node} name={node} />
+          <Node
+            key={node}
+            name={node}
+            dispatch={dispatch}
+            pathOrder={pathOrder}
+          />
         ))}
       </div>
     </section>

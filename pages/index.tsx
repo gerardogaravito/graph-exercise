@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from 'styles/Home.module.scss';
 import { useStore } from 'store';
 
-import { Footer, Header, NodesInput, NavigateButton } from 'components';
+import { Header, NodesInput, NavigateButton } from 'components';
 
 export default function Home() {
   const { nodes } = useStore();
@@ -18,9 +18,7 @@ export default function Home() {
 
       <NodesInput />
 
-      {nodes.length > 0 && <NavigateButton to='/relations' text='siguiente' />}
-
-      {/* <Footer /> */}
+      {nodes.length > 0 && <NavigateButton to='/relations' text='next' />}
     </div>
   );
 }

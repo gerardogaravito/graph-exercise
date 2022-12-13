@@ -17,6 +17,10 @@
     outline: inherit;
     border: none;
     transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:disabled {
+      background-color: $gray-color;
+    }
   }
 
   &__delete {
@@ -34,6 +38,22 @@
     }
   }
 
+  &__stepNumber {
+    background-color: $white-color;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 5;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid $step-color;
+    color: $black-color;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__circle {
     font-size: 24px;
     height: 150px;
@@ -44,5 +64,21 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  &__circlePath {
+    font-size: 24px;
+    height: 150px;
+    width: 150px;
+    background-color: $primary-color;
+    border-radius: 100%;
+    grid-area: 1 / 1 / 4 / 4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background-color: $success-color;
+    }
   }
 }

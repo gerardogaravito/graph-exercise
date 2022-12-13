@@ -2,13 +2,7 @@ import Head from 'next/head';
 import styles from 'styles/Home.module.scss';
 import { useStore } from 'store';
 
-import {
-  Footer,
-  Header,
-  Graph,
-  NavigateButton,
-  RelationsGenerator,
-} from 'components';
+import { Header, Graph, NavigateButton, RelationsGenerator } from 'components';
 
 export default function Relations() {
   const { nodes, dispatch, relations } = useStore();
@@ -31,9 +25,10 @@ export default function Relations() {
 
       {relations.length > 0 && <Graph relations={relations} />}
 
-      <NavigateButton to='/' text='atrás' />
-
-      {/* <Footer /> */}
+      <span>
+        <NavigateButton to='/' text='back' />
+        <NavigateButton to='/path' text='next' />
+      </span>
     </div>
   );
 }
