@@ -1,20 +1,12 @@
 import React, { FC } from 'react';
 import { Node } from 'components';
 import styles from './pathOrder.module.scss';
-import { relationType } from 'types/nodes.types';
 import {
   useFilterNodesInGraph,
   useValidateNextStep,
   useCalculateCost,
 } from 'hooks';
-import { Actions } from 'store/clientStore.actions';
-
-interface IPathOrder {
-  nodes: string[];
-  relations: relationType[];
-  dispatch: (action: Actions) => void;
-  pathOrder: string[];
-}
+import { IPathOrder } from './pathOrder.types';
 
 const PathOrder: FC<IPathOrder> = ({
   nodes,
@@ -46,6 +38,10 @@ const PathOrder: FC<IPathOrder> = ({
           </button>
         )}
       </div>
+      <small>
+        Total Cost is the summatory of each binary connection used PLUS two
+        times each not used connection of a traveled node
+      </small>
       <p>Click on the nodes to create your desired route</p>
       <div className={styles.nodesContainer}>
         {nodesInGraph.map((node) => (
