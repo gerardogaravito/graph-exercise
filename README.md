@@ -10,7 +10,7 @@ website url: https://graph-exercise.vercel.app/
 
 ![](https://github.com/gerardogaravito/graph-exercise/blob/main/public/relations.png)
 
-### Select your path and know you Total Cost
+### Select your path and know your Total Cost
 
 Total Cost is the summatory of each binary connection used PLUS two times each not used connection of a traveled node
 ![](https://github.com/gerardogaravito/graph-exercise/blob/main/public/path.png)
