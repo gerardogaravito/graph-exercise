@@ -27,7 +27,7 @@ export default function Relations() {
 
       <span>
         <NavigateButton to='/' text='back' />
-        <NavigateButton to='/path' text='next' />
+        {relations.length > 0 && <NavigateButton to='/path' text='next' />}
       </span>
     </div>
   );

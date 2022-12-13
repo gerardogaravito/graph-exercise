@@ -1,14 +1,9 @@
 import React, { FC } from 'react';
 import dynamic from 'next/dynamic';
-import { relationType } from 'types/nodes.types';
 import { useCreateDot } from 'hooks';
+import { IGraph } from './graph.types';
 
 const Graphviz = dynamic(() => import('graphviz-react'), { ssr: false });
-
-interface IGraph {
-  relations: relationType[];
-  pathOrder?: string[];
-}
 
 const Graph: FC<IGraph> = ({ relations, pathOrder }) => {
   const { dot } = useCreateDot(relations, pathOrder);

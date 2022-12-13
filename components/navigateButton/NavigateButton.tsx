@@ -1,11 +1,7 @@
 import React, { FC } from 'react';
 import styles from './navigateButton.module.scss';
 import Link from 'next/link';
-
-interface INavigateButton {
-  text: string;
-  to: string;
-}
+import { INavigateButton } from './navigateButton.types';
 
 const NavigateButton: FC<INavigateButton> = ({ text, to }) => {
   return (
