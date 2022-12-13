@@ -1,0 +1,31 @@
+@import 'styles/variables.module.scss';
+
+.nodeSelector {
+  min-width: 150px;
+}
+
+.weightInput {
+  height: inherit;
+  width: 150px;
+  border: solid 1px $black-color;
+  border-radius: 3px;
+  margin-top: 12px;
+  outline: none;
+  font-size: inherit;
+  font-weight: bold;
+  padding: 12px;
+  color: $black-color;
+}
+
+.generateButton {
+  padding: 12px 0px;
+  width: 150px;
+  margin: 24px 0px;
+  background-color: $primary-color;
+  border-radius: 3px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: $success-color;
+  }
+}

@@ -1,0 +1,57 @@
+@import 'styles/variables.module.scss';
+
+.nodesInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 650px;
+
+  &__form {
+    height: 50px;
+    max-width: 650px;
+    margin-bottom: 50px;
+
+    & div {
+      height: inherit;
+      border-radius: 3px;
+      overflow: hidden;
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+      width: 100%;
+    }
+  }
+
+  &__label {
+    line-height: 1.15;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  &__input {
+    height: inherit;
+    width: 200px;
+    border: none transparent;
+    outline: none;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 12px;
+  }
+
+  &__submit {
+    background-color: $primary-color;
+    height: inherit;
+    width: 50px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background-color: $success-color;
+    }
+  }
+}
+
+.nodesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
