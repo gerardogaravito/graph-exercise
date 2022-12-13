@@ -1,15 +1,6 @@
 import React, { FC } from 'react';
 import styles from './node.module.scss';
-import { useStore } from 'store';
-import { Actions } from 'store/clientStore.actions';
-
-interface INode {
-  name: string;
-  dispatch: (action: Actions) => void;
-  pathOrder: string[];
-  isPathOrder?: boolean;
-  disabled?: boolean;
-}
+import { INode } from './node.types';
 
 const Node: FC<INode> = ({
   name,

@@ -32,6 +32,10 @@ span {
   margin: 48px 0px;
 }
 
+small {
+  font-style: italic;
+}
+
 @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;

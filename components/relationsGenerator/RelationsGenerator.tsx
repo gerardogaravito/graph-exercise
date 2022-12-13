@@ -2,14 +2,7 @@ import React, { FC, useState } from 'react';
 import Select from 'react-select';
 import styles from './relationsGenerator.module.scss';
 import { useFixNodesForSelectors } from 'hooks';
-import { Actions } from 'store/clientStore.actions';
-import { relationType } from 'types/nodes.types';
-
-interface IRelationsGenerator {
-  nodes: string[];
-  dispatch: (action: Actions) => void;
-  relations: relationType[];
-}
+import { IRelationsGenerator } from './relationGenerator.types';
 
 const RelationsGenerator: FC<IRelationsGenerator> = ({
   nodes,
