@@ -12,12 +12,14 @@ const RelationsGenerator: FC<IRelationsGenerator> = ({
   const [firstNode, setFirstNode] = useState<string>('');
   const [secondNode, setSecondNode] = useState<string>('');
   const [weight, setWeight] = useState<number>(0);
-  const [showError, setShowError] = useState<boolean>(false);
+  const [showError, setShowError] = useState<string>('');
 
   const { options } = useFixNodesForSelectors(nodes);
 
   const handleAddRelation = () => {
-    if (
+    if (firstNode === secondNode) {
+      setShowError('Can not connect same node');
+    } else if (
       relations.find((item) =>
         item.relation.includes(`${firstNode} -- ${secondNode}`)
       ) ||
@@ -25,9 +27,9 @@ const RelationsGenerator: FC<IRelationsGenerator> = ({
         item.relation.includes(`${secondNode} -- ${firstNode}`)
       )
     ) {
-      setShowError(true);
+      setShowError('Relation already created.');
     } else {
-      setShowError(false);
+      setShowError('');
       dispatch({
         type: 'ADD_RELATION',
         payload: {
@@ -64,7 +66,7 @@ const RelationsGenerator: FC<IRelationsGenerator> = ({
         value={weight}
         min={0}
       />
-      {showError && <p>Relation already created.</p>}
+      {showError.length > 0 && <p>{showError}</p>}
       <button className={styles.generateButton} onClick={handleAddRelation}>
         Generate relation
       </button>
