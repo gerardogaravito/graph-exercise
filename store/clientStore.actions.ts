@@ -11,4 +11,10 @@ type PathOrderActions =
   | { type: 'ADD_STEP'; payload: { newStep: string } }
   | { type: 'DELETE_STEP' };
 
-export type Actions = NodesActions | RelationsActions | PathOrderActions;
+type SetupActions = { type: 'RESTART' };
+
+export type Actions =
+  | NodesActions
+  | RelationsActions
+  | PathOrderActions
+  | SetupActions;
