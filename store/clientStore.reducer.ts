@@ -28,6 +28,12 @@ const reducer = (draft: Clientdraft, action: Actions) => {
       draft.pathOrder.pop();
       break;
 
+    case 'RESTART':
+      draft.nodes = [];
+      draft.pathOrder = [];
+      draft.relations = [];
+      break;
+
     default:
       throw new Error('Invalid action type');
   }

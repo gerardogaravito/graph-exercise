@@ -7,6 +7,10 @@ import { Header, Graph, NavigateButton, PathOrder } from 'components';
 export default function Path() {
   const { nodes, dispatch, relations, pathOrder } = useStore();
 
+  const handleRestart = () => {
+    dispatch({ type: 'RESTART' });
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -28,7 +32,14 @@ export default function Path() {
         pathOrder={pathOrder}
       />
 
-      <NavigateButton to='/relations' text='back' />
+      <span>
+        <NavigateButton to='/relations' text='back' />
+        <NavigateButton
+          to='/'
+          text='start from the beginning'
+          onClick={handleRestart}
+        />
+      </span>
     </div>
   );
 }
